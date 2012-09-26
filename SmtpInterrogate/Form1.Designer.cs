@@ -55,6 +55,9 @@
             this.port = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonClearForm = new System.Windows.Forms.Button();
+            this.useDefaultCreds = new System.Windows.Forms.CheckBox();
+            this.timeoutTime = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -74,7 +77,7 @@
             // 
             this.buttonClearResults.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonClearResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClearResults.Location = new System.Drawing.Point(229, 447);
+            this.buttonClearResults.Location = new System.Drawing.Point(229, 490);
             this.buttonClearResults.Name = "buttonClearResults";
             this.buttonClearResults.Size = new System.Drawing.Size(136, 37);
             this.buttonClearResults.TabIndex = 21;
@@ -107,7 +110,7 @@
             // 
             this.buttonSend.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.buttonSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSend.Location = new System.Drawing.Point(17, 447);
+            this.buttonSend.Location = new System.Drawing.Point(17, 490);
             this.buttonSend.Name = "buttonSend";
             this.buttonSend.Size = new System.Drawing.Size(136, 37);
             this.buttonSend.TabIndex = 20;
@@ -121,7 +124,7 @@
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(17, 490);
+            this.groupBox3.Location = new System.Drawing.Point(17, 533);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(567, 123);
             this.groupBox3.TabIndex = 19;
@@ -153,7 +156,7 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(17, 168);
+            this.groupBox2.Location = new System.Drawing.Point(17, 211);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(567, 272);
             this.groupBox2.TabIndex = 18;
@@ -282,6 +285,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.timeoutTime);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.useDefaultCreds);
             this.groupBox1.Controls.Add(this.password);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.username);
@@ -294,7 +300,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(17, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(567, 112);
+            this.groupBox1.Size = new System.Drawing.Size(567, 155);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SMTP Server Info";
@@ -343,7 +349,7 @@
             // 
             this.buttonClearForm.BackColor = System.Drawing.Color.OldLace;
             this.buttonClearForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClearForm.Location = new System.Drawing.Point(448, 447);
+            this.buttonClearForm.Location = new System.Drawing.Point(448, 490);
             this.buttonClearForm.Name = "buttonClearForm";
             this.buttonClearForm.Size = new System.Drawing.Size(136, 37);
             this.buttonClearForm.TabIndex = 22;
@@ -351,11 +357,41 @@
             this.buttonClearForm.UseVisualStyleBackColor = false;
             this.buttonClearForm.Click += new System.EventHandler(this.buttonClearForm_Click_1);
             // 
+            // useDefaultCreds
+            // 
+            this.useDefaultCreds.AutoSize = true;
+            this.useDefaultCreds.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.useDefaultCreds.Location = new System.Drawing.Point(6, 107);
+            this.useDefaultCreds.Name = "useDefaultCreds";
+            this.useDefaultCreds.Size = new System.Drawing.Size(155, 19);
+            this.useDefaultCreds.TabIndex = 9;
+            this.useDefaultCreds.Text = "Use Default Credentials";
+            this.useDefaultCreds.UseVisualStyleBackColor = true;
+            // 
+            // timeoutTime
+            // 
+            this.timeoutTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeoutTime.Location = new System.Drawing.Point(287, 125);
+            this.timeoutTime.Name = "timeoutTime";
+            this.timeoutTime.Size = new System.Drawing.Size(269, 21);
+            this.timeoutTime.TabIndex = 11;
+            this.timeoutTime.Text = "100000";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(287, 107);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 15);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Timeout";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 624);
+            this.ClientSize = new System.Drawing.Size(603, 669);
             this.Controls.Add(this.buttonClearResults);
             this.Controls.Add(this.buttonSend);
             this.Controls.Add(this.groupBox3);
@@ -405,6 +441,9 @@
         private System.Windows.Forms.TextBox port;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonClearForm;
+        private System.Windows.Forms.CheckBox useDefaultCreds;
+        private System.Windows.Forms.TextBox timeoutTime;
+        private System.Windows.Forms.Label label10;
 
     }
 }

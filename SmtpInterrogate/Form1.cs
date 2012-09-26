@@ -53,11 +53,13 @@ namespace SmtpInterrogate
             smtpClient.UseDefaultCredentials = false;
             smtpClient.EnableSsl = useSsl.Checked;
             smtpClient.Port = Convert.ToInt32(port.Text);
+            smtpClient.Timeout = Convert.ToInt32(timeoutTime.Text);
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtpClient.UseDefaultCredentials = useDefaultCreds.Checked;
 
             if (false == string.IsNullOrEmpty(username.Text))
             {
-                NetworkCredential basicCredential = new NetworkCredential(username.Text, username.Text);
-                smtpClient.Credentials = basicCredential;
+                smtpClient.Credentials = new NetworkCredential(username.Text, password.Text);
             }
 
             MailAddress fromAddress = new MailAddress(from.Text);
